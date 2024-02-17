@@ -28,3 +28,7 @@ class Cart:
 
     def get_total_price(self):
         return '%.2f' % sum(float(i['total_price']) for i in self.cart.values())
+
+    def clear(self):
+        del self.session[settings.CART]
+        self.save()

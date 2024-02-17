@@ -23,6 +23,6 @@
 {% endfor %}
 <div class="row mb-3">
     <div class="col-6"><h4 class=" btn btn-success px-1">Umumiy Narxi: <i><strong>{{total_price}}$</strong></i></h4></div>
-    <div class="col-6 text-end"><h4 class=" btn btn-warning px-1"><a href="" class="text-decoration-none text-white">Buyrutma Berish</a></h4></div>
+    <div class="col-6 text-end"><h4 class=" btn btn-warning px-1"><a href="{% url 'orders:order_create' %}" class="text-decoration-none text-white">Buyrutma Berish</a></h4></div>
 </div>
 {% endblock %}
