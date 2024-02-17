@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-4 py-2">
+                <img class="w-100" src="{{get_book.photo.url}}" alt="">
+            </div>
+            <div class="col-8 py-2">
+                <h4 class="text-center">{{get_book.title}}</h4>
+                <p class="bg-light text-dark">Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Distinctio porro praesentium suscipit
+                    veniam voluptatem? Consequuntur corporis iste quos vitae? Ex!
+                </p>
+                <p>Price: {{get_book.price}}$</p>
+                <form action="{% url 'cart:add' get_book.slug %}" method="post">
+                    {% csrf_token %}
+                    {{cart_add_form}}
+                    <button type="submit" class="btn btn-success mt-2">Add to cart</button>
+                </form>
+            </div>
+        </div>
+
+{% endblock %}

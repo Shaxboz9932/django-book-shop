@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <div class="row">
+            {% for book in get_book %}
+            <div class="col-4">
+                <div class="container pt-2">
+        <!-- <div class="card w-25 mx-auto"> -->
+            <div class="card w-100">
+            <img src="{{book.photo.url}}" class="card-img-top" style="height: 300px" alt="">
+            <div class="card-body">
+                <a href="{% url 'book:detail' book.slug %}" class="btn btn-success ">Read more</a>
+            </div>
+        </div>
+    </div>
+            </div>
+            {% endfor %}
+        </div>
+
+{% endblock %}

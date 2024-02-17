@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="text-center">Cart Info</h2>
+{% for c in cart.values %}
+        <div class="row">
+            <div class="col-4 py-2">
+                <img class="w-100" src="{{c.image}}" alt="">
+            </div>
+            <div class="col-8 py-2">
+                <h4 class="text-center">{{c.title}}</h4>
+                <p class="bg-light text-dark">Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Distinctio porro praesentium suscipit
+                    veniam voluptatem? Consequuntur corporis iste quos vitae? Ex!
+                </p>
+                <p>Quantity: {{c.quantity}}</p>
+                <p>Price: {{c.price}}$</p>
+                <p>Total Price: {{c.total_price}}$</p>
+                <a href="{% url 'cart:remove' c.slug %}" class="btn btn-danger">Remove</a>
+            </div>
+        </div>
+<hr>
+{% endfor %}
+<div class="row mb-3">
+    <div class="col-6"><h4 class=" btn btn-success px-1">Umumiy Narxi: <i><strong>{{total_price}}$</strong></i></h4></div>
+    <div class="col-6 text-end"><h4 class=" btn btn-warning px-1"><a href="" class="text-decoration-none text-white">Buyrutma Berish</a></h4></div>
+</div>
+{% endblock %}
